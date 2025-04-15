@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payslip Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">Payslip Management</div>
+    <ul>
+      <li><a href="#">Generate Payslips</a></li>
+      <li><a href="#">Send Log</a></li>
+      <li><a href="#">Signed Submissions</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Generate Payslips</h1>
+    <button id="generateBtn">Generate PDFs</button>
+    <div id="prompt"></div>
+
+    <table id="pdfTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Employee Name</th>
+          <th>PDF File</th>
+          <th>Date Generated</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dynamically populated -->
+      </tbody>
+    </table>
+
+    <div class="action-bar">
+      <button id="sendAllBtn">Send All to Messenger</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
