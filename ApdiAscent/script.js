@@ -10,11 +10,17 @@ const promptBox = document.getElementById('prompt');
 const pdfTableBody = document.querySelector('#pdfTable tbody');
 
 // ============ Functions ============
-function showPrompt(message, color = 'green') {
+function showPrompt(message, type = 'success') {
+  const promptBox = document.getElementById('prompt');
   promptBox.textContent = message;
-  promptBox.style.color = color;
-  setTimeout(() => (promptBox.textContent = ''), 4000);
+  promptBox.className = 'alert' + (type === 'error' ? ' error' : '');
+  promptBox.classList.remove('hidden');
+
+  setTimeout(() => {
+    promptBox.classList.add('hidden');
+  }, 4000);
 }
+
 
 async function loadPDFList() {
   try {
