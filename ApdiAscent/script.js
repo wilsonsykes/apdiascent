@@ -1,6 +1,6 @@
 // ============ CONFIG ============
 const PDF_LOG_URL = './data/pdf-log.json';
-const GENERATE_PDFS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbzux1s2_snSVeiPHHz9bA7U2v4B1JSc6uFqBvuQrEwwxw1ixS5y7sMnAzaqxjBXB5kW8g/exec; // ✅ Replace with your deployed Apps Script Web App URL
+const GENERATE_PDFS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbzux1s2_snSVeiPHHz9bA7U2v4B1JSc6uFqBvuQrEwwxw1ixS5y7sMnAzaqxjBXB5kW8g/exec'; // ✅ Replace with your deployed Apps Script Web App URL
 const SEND_ALL_WEBHOOK = 'https://your-n8n-webhook-url/send-all';
 
 // ============ DOM Elements ============
