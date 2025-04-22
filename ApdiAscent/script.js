@@ -1,7 +1,7 @@
 // ============ CONFIG ============
 const PDF_LOG_URL = 'https://raw.githubusercontent.com/wilsonsykes/apdiascent/main/ApdiAscent/data/pdf-log.json?t=' + Date.now();
 const GENERATE_PDFS_WEBHOOK = 'https://script.google.com/macros/s/AKfycbzux1s2_snSVeiPHHz9bA7U2v4B1JSc6uFqBvuQrEwwxw1ixS5y7sMnAzaqxjBXB5kW8g/exec';
-const SEND_ALL_WEBHOOK = 'https://your-n8n-webhook-url/send-all';
+const SEND_ALL_WEBHOOK = 'https://n8n.apdi2025.site/webhook/c223cbc5-4c07-445c-ac0b-ebbe309f95be';
 
 
 // ============ DOM Elements ============
