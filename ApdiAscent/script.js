@@ -25,7 +25,9 @@ function showPrompt(message, type = 'success') {
 
 async function loadPDFList() {
   try {
-    const response = await fetch(PDF_LOG_URL);
+    const response = await fetch(PDF_LOG_URL, {
+      cache: "no-store"
+    });
     const data = await response.json();
 
     pdfTableBody.innerHTML = '';
@@ -44,6 +46,7 @@ async function loadPDFList() {
     console.error('Error loading pdf-log.json:', error);
   }
 }
+
 
 async function handleGenerate() {
   try {
