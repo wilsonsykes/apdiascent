@@ -54,6 +54,16 @@ h1 {
   color: #1d3557;
 }
 
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.clear-button {
+  margin-left:30px;
+}
+
 button {
   background-color: #1d77ff;
   color: #fff;
