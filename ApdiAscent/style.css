@@ -54,13 +54,13 @@ h1 {
   color: #1d3557;
 }
 
-.button-container {
+button-container {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-.clear-button {
+clear-button {
   margin-left:30px;
 }
 
