@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Login</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
-<body>
-  <h2>Login to Continue</h2>
-  <script>
-    netlifyIdentity.on("init", user => {
-      if (!user) netlifyIdentity.open("login");
+<!-- Load Netlify Identity Widget -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<script>
+  // Initialize the widget
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.open(); // 🔥 Open login modal if not already logged in
+      }
     });
-    netlifyIdentity.on("login", () => {
-      document.location.href = "/"; // redirect to homepage after login
+
+    window.netlifyIdentity.on("login", user => {
+      console.log("Logged in:", user);
+      window.location.href = "/"; // 🔥 Redirect to home page after login
     });
-    netlifyIdentity.init();
-  </script>
-</body>
-</html>
+  }
+</script>
