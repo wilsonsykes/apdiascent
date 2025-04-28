@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <h2>Login to Continue</h2>
+  <script>
+    netlifyIdentity.on("init", user => {
+      if (!user) netlifyIdentity.open("login");
+    });
+    netlifyIdentity.on("login", () => {
+      document.location.href = "/"; // redirect to homepage after login
+    });
+    netlifyIdentity.init();
+  </script>
+</body>
+</html>
