@@ -4,28 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - APDI P-Slip Management</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> <!-- Real widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
-<body>
-  <div id="login-wrapper" style="display: flex; align-items: center; justify-content: center; height: 100vh;">
-    <div>
-      <h1>Login to Continue</h1>
-      <button onclick="netlifyIdentity.open()">Login / Sign Up</button>
-    </div>
-  </div>
+<body style="background: #5d6d7e; color: white; display: flex; align-items: center; justify-content: center; height: 100vh;">
+
+  <h1>Login to Continue</h1>
 
   <script>
-    netlifyIdentity.init({
-      APIUrl: "https://apdi-ascent.netlify.app/.netlify/identity"
-    });
+    if (window.netlifyIdentity) {
+      netlifyIdentity.init({
+        APIUrl: "https://apdi-ascent.netlify.app/.netlify/identity" // Your Identity API
+      });
 
-    netlifyIdentity.on('login', () => {
-      window.location.href = "/";
-    });
+      netlifyIdentity.on('init', user => {
+        if (!user) {
+          netlifyIdentity.open('login'); // 🔥 Open login form immediately
+        } else {
+          window.location.href = '/';
+        }
+      });
 
-    netlifyIdentity.on('logout', () => {
-      window.location.href = "/auth.html";
-    });
+      netlifyIdentity.on('login', user => {
+        window.location.href = '/';
+      });
+    }
   </script>
+
 </body>
 </html>
