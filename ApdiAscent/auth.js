@@ -1,12 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
   if (window.netlifyIdentity) {
     netlifyIdentity.on('init', user => {
-      if (!user) {
-        window.location.href = '/auth.html'; // 🚀 Force redirect if not logged in
-      } else {
-        const loginBtn = document.getElementById('login-btn');
-        const logoutBtn = document.getElementById('logout-btn');
+      const loginBtn = document.getElementById('login-btn');
+      const logoutBtn = document.getElementById('logout-btn');
 
+      if (!user) {
+        if (window.location.pathname === '/auth.html') {
+          netlifyIdentity.open(); // 🚀 Auto-open login/signup modal on auth.html
+        } else {
+          window.location.href = '/auth.html'; // 🚀 Redirect to auth.html if not logged in
+        }
+      } else {
         if (loginBtn && logoutBtn) {
           loginBtn.style.display = 'none';
           logoutBtn.style.display = 'inline-block';
@@ -16,11 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
           });
 
           netlifyIdentity.on('logout', () => {
-            window.location.href = '/auth.html';
+            window.location.href = '/auth.html'; // 🚀 After logout, send back to auth.html
           });
         }
       }
     });
+
+    netlifyIdentity.on('login', () => {
+      window.location.href = '/'; // 🚀 After successful login, go to homepage
+    });
+
     netlifyIdentity.init();
   }
 });
