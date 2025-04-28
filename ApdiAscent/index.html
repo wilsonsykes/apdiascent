@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APDI P-slip Management</title>
+  <title>APDI P-Slip Management</title>
   <link rel="stylesheet" href="style.css">
-  <script src="auth.js" defer></script> <!-- 🔥 Load auth.js early and safely -->
+  <script src="auth.js" defer></script> <!-- Netlify Identity Login Script -->
 </head>
 <body>
   <nav>
@@ -15,8 +15,8 @@
       <li><a href="#">Send Log</a></li>
       <li><a href="#">Signed Submissions</a></li>
     </ul>
-    <!-- 🔥 Inject Login/Logout Buttons here -->
-    <div>
+    <!-- Login/Logout Buttons -->
+    <div class="login-control">
       <button id="login-btn" style="display: none;">Login</button>
       <button id="logout-btn" style="display: none;">Logout</button>
     </div>
@@ -31,7 +31,7 @@
         <button id="clearBtn" class="clear-button">Clear Table</button>
       </div>
     </div>
-    
+
     <table id="pdfTable">
       <thead>
         <tr>
@@ -42,7 +42,7 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Dynamically populated -->
+        <!-- Table rows dynamically populated here -->
       </tbody>
     </table>
 
@@ -51,6 +51,6 @@
     </div>
   </main>
 
-  <script src="script.js"></script> <!-- ✅ Your table generation and sending logic -->
+  <script src="script.js"></script> <!-- Your table and messaging logic -->
 </body>
 </html>
