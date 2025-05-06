@@ -1,9 +1,0 @@
-
-[build]
-  publish = "APDF"
-  command = ""
-
-[[redirects]]
-  from = "/*"
-  to = "/auth.html"
-  status = 200
