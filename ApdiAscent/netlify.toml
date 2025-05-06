@@ -1,0 +1,7 @@
+[build]
+  publish = "ApdiAscent"
+
+[[redirects]]
+  from = "/*"
+  to = "/auth.html"
+  status = 200
