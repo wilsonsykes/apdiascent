@@ -1,0 +1,8 @@
+[build]
+  command = ""  # No build step needed
+  publish = "."  # Serve the current root directory
+
+[[redirects]]
+  from = "/*"
+  to = "/auth.html"
+  status = 200
